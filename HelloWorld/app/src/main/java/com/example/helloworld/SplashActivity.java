@@ -3,8 +3,8 @@ package com.example.helloworld;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -18,27 +18,24 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         //1.获取需要的控件
-        tvVersion =  findViewById(R.id.tv_version);
+        tvVersion = findViewById(R.id.tv_version);
         //2.获取或设置控件的值
         String version = tvVersion.getText().toString();
-
         try {
-            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(),0);
-            tvVersion.setText("原版本号: "+info);
+            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), 0);
+            tvVersion.setText("原版本号: " + info);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-
-
         //3.跳转界面
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         };
-        timer.schedule(task,5000);
+        timer.schedule(task, 5000);
     }
 }

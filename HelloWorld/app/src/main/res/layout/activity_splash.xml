@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/img"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".SplashActivity">
     <!--<ImageView-->
     <!--    android:id="@+id/iv_splash"-->
@@ -16,11 +16,11 @@
     <!--    android:layout_height="match_parent"/>-->
     <TextView
         android:id="@+id/tv_version"
-        android:text="版本号"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_height="wrap_content"/>
+        android:gravity="center"
+        android:text="版本号"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
 </LinearLayout>
